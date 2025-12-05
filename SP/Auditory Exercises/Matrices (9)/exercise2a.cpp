@@ -12,13 +12,14 @@ int main() {
             cin >> matrix[i][j];
         }
     }
-    max = min = matrix[0][0];
+    max = matrix[0][1];
+    min = matrix[1][0];
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            if (matrix[i][j] > max) {
+            if (i < j && matrix[i][j] > max) {
                 max = matrix[i][j];
             }
-            if (matrix[i][j] < min) {
+            if (i > j && matrix[i][j] < min) {
                 min = matrix[i][j];
             }
         }
