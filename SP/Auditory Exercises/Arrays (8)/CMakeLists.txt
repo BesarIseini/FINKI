@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 4.0)
+project(Arrays__8_)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_executable(Arrays__8_ main.cpp)
+add_executable(Exercise1 exercise1.cpp)
+add_executable(Exercise2 exercise2.cpp)
+add_executable(Exercise3 exercise3.cpp)
+add_executable(Exercise4 exercise4.cpp)
+add_executable(Exercise5 exercise5.cpp)
+add_executable(Exercise6 exercise6.cpp)
+add_executable(Exercise6Left exercise6left.cpp)
+add_executable(Exercise6Caesar exercise6caesar.cpp)
+add_executable(Exercise7 exercise7.cpp)
