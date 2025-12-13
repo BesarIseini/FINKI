@@ -13,3 +13,5 @@ add_executable(Exercise23 exercise23.cpp)
 
 add_executable(Exercise04 exercise04.cpp)
 add_executable(Exercise03 exercise03.cpp)
+add_executable(Exercise28 exercise28.cpp)
+add_executable(Exercise05 exercise05.cpp)
