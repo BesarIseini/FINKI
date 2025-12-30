@@ -1,53 +1,26 @@
 #include <iostream>
+#include <cstring>
+#include <cctype>
+
 using namespace std;
 
-int main() {
-    int n;
-    float matrix[100][100];
-    cin >> n;
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            cin >> matrix[i][j];
+int main () {
+    char text[31];
+    while (cin >> text) {
+        bool palindrome = true;
+        for (int i = 0; i < strlen(text) / 2; i++) {
+            char vowel = tolower(text[i]);
+            if (vowel == 'a' || vowel == 'i' || vowel == 'e' || vowel == 'o' || vowel == 'u' || vowel == 'y') {
+                if (vowel != tolower(text[strlen(text) - 1 - i])) {
+                    palindrome = false;
+                    break;
+                }
+            }
+        }
+        if (palindrome) {
+            cout << text << endl;
         }
     }
 
-    float zElements[100];
-    int counter = 0;
-    for (int i = 0; i < n - 1; i++) {
-        zElements[counter] = matrix[0][i];
-        counter++;
-    }
-    for (int i = 0; i < n; i++) {
-        zElements[counter] = matrix[i][n-1-i];
-        counter++;
-    }
-    for (int i = 1; i < n; i++) {
-        zElements[counter] = matrix[n - 1][i];
-        counter++;
-    }
-
-
-    int totalCounter = counter;
-
-    for (int i = 0; i < n - 1; i++) {
-        matrix[0][i] = zElements[--counter];
-    }
-    for (int i = 0; i < n; i++) {
-        matrix[i][n-i-1] = zElements[--counter];
-    }
-    for (int i = 1; i < n; i++) {
-        matrix[n - 1][i] = zElements[--counter];
-    }
-
-    for (int i = 0; i < totalCounter; i++) {
-        cout << zElements[i] << " ";
-    }
-    cout << endl;
-
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            cout << matrix[i][j] << " ";
-        }
-        cout << endl;
-    }
+    return 0;
 }
