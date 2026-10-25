@@ -11,6 +11,7 @@ public class Exercise7 {
         for(int i = 0; i < l % n; i++) {
             list.insertFirst(list.deleteLast());
         }
+
     }
 
     public static void main(String[] args) {
